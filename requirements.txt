@@ -1,3 +1,10 @@
 pandas==1.1.3
+<<<<<<< HEAD
 jupyter
 matplotlib
+=======
+matplotlib
+jupyter
+openpyxl
+seaborn
+>>>>>>> 4d84bf8c0bfd3ccd1944720bc8097ac1a71ee942
