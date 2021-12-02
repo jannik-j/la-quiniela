@@ -4,3 +4,4 @@ jupyter
 openpyxl
 seaborn
 sklearn
+imbalanced-learn
