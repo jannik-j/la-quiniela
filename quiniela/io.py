@@ -6,6 +6,7 @@ import settings
 
 
 def load_matchday(season, division, matchday):
+    season = season.split('-')[0]
     with sqlite3.connect(settings.DATABASE_PATH) as conn:
         data = pd.read_sql(f"""
             SELECT * FROM Matches
@@ -23,6 +24,7 @@ def load_historical_data(seasons):
         if seasons == "all":
             data = pd.read_sql("SELECT * FROM Matches", conn)
         else:
+            seasons = [season.split('-')[0] for season in seasons]
             data = pd.read_sql(f"""
                 SELECT * FROM Matches
                     WHERE season IN {tuple(seasons)}
@@ -33,5 +35,6 @@ def load_historical_data(seasons):
 
 
 def save_predictions(predictions):
+    cols_to_save = ['season', 'division', 'matchday', 'home_team', 'score', 'away_team', 'pred']
     with sqlite3.connect(settings.DATABASE_PATH) as conn:
-        predictions.to_sql(name="Predictions", con=conn, if_exists="append", index=False)
+        predictions[cols_to_save].to_sql(name="Predictions", con=conn, if_exists="append", index=False)
