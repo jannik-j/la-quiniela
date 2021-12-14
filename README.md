@@ -2,6 +2,23 @@
 
 Team members: Eline Michiels - Niklas Lütjeharms - Jannik Jacobsen
 
+Our solutions to the analytical exercises can be found in `analysis/AnalyticalWork.ipynb`.
+
+The main model analysis notebook is `analysis/ModelAnalysis.ipynb`. We also looked at some of the features we chose more in-depth, the results
+of this can be found in `analysis/FeatureAnalysis.ipynb` to avoid a very lengthy part in the ModelAnalysis notebook that was not specifically part of the task.
+
+HTML exports of all notebooks can be found in the `reports/` subfolder.
+
+For the implementation of the module, we used the structure provided by the repository and modyfied the `train` and `test` functions in `quiniela/models.py` as well as some functions in `io.py`.
+
+To save our features after extracting them we created a new sqlite database `laliga_features.sqlite` which also contains the table where the predictions of the model are saved.
+
+We worked on everything using Python 3.9.7 with a virtual environment containing the libraries in `requirements.txt`.
+
+-----
+
+### Original Readme
+
 This repo contains the skeleton for you to build your first ML project. Use the data in ```laliga.sqlite``` to build a ML model that predicts the outcome of a matchday in LaLiga (Spanish Football League).
 
 It also contains a PDF with some exercises to practice your Python skills as a Data Scientist.

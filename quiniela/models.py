@@ -8,6 +8,10 @@ from sklearn.preprocessing import StandardScaler
 class QuinielaModel:
 
     def __init__(self):
+        """Defines the classifiers that form part of the vote as well as the
+        VotingClassifier object.
+        """
+
         self.knn = KNeighborsClassifier(n_neighbors=8, weights='distance' )
         self.dt = DecisionTreeClassifier(max_depth=3, class_weight='balanced', random_state=20)
         self.dt_2 = DecisionTreeClassifier(max_depth=3, class_weight='balanced', random_state=10)
@@ -23,6 +27,10 @@ class QuinielaModel:
         self.scaler = StandardScaler()
 
     def train(self, train_data):
+        """Fits the VotingClassifier model after scaling the train_data
+        :param train_data: DataFrame with the matches to be used for training
+        """
+
         train_data = train_data[train_data['season']<2021]
         if train_data.empty:
             raise ValueError(f"Please specify at least a training season earlier than 2021-2022.")
@@ -35,6 +43,10 @@ class QuinielaModel:
         self.vc.fit(X_scaled, y)
 
     def predict(self, predict_data):
+        """Predicts the matches in predict_data using the self.vc model.
+        :param predict_data: DataFrame with the matches to predict
+        """
+        
         X_pred = predict_data[self.features]
         X_pred_scaled = self.scaler.transform(X_pred)
         return self.vc.predict(X_pred_scaled)

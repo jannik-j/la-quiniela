@@ -91,4 +91,5 @@ if __name__ == "__main__":
         print("=" * 70)
         for _, row in predict_data.iterrows():
             print(f"{row['home_team']:^30s} vs {row['away_team']:^30s} --> {row['pred']}")
+            logging.info(f"{row['home_team']:^30s} vs {row['away_team']:^30s} --> {row['pred']}")
         io.save_predictions(predict_data)
