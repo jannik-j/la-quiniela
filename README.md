@@ -11,6 +11,8 @@ HTML exports of all notebooks can be found in the `reports/` subfolder.
 
 For the implementation of the module, we used the structure provided by the repository and modyfied the `train` and `test` functions in `quiniela/models.py` as well as some functions in `io.py`.
 
+A pre-trained model created using this module and trained on the seasons 1928-1929 to 2019-2020 can be found in the `models` folder.
+
 To save our features after extracting them we created a new sqlite database `laliga_features.sqlite` which also contains the table where the predictions of the model are saved.
 
 We worked on everything using Python 3.9.7 with a virtual environment containing the libraries in `requirements.txt`.
