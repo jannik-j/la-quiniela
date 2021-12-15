@@ -1,6 +1,6 @@
 ## LaQuiniela of LaLiga
 
-Team members: Eline Michiels - Niklas Lütjeharms - Jannik Jacobsen
+Team members: Eline Michiels  1624509 - Niklas Lütjeharms  1625607 - Jannik Jacobsen  1621195
 
 Our solutions to the analytical exercises can be found in `analysis/AnalyticalWork.ipynb`.
 
